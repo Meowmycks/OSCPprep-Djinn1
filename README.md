@@ -594,7 +594,7 @@ Saving to: 'lse.tar'
 
 lse.tar             100%[===================>]  12.23M  --.-KB/s    in 0.07s   
 
-2022-07-11 19:11:47 (171 MB/s) - 'lse.tar' saved [12820480/12820480]
+2022-10-15 19:11:47 (171 MB/s) - 'lse.tar' saved [12820480/12820480]
 ```
 
 Running LSE shows that we can run some binary called ```genie``` without a password as ```sam```.
