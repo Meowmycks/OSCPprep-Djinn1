@@ -451,8 +451,6 @@ This brought me to the ```genie``` page and I saw the words ```www-data```, conf
 
 ![image](https://user-images.githubusercontent.com/45502375/196001138-936f70ee-71a9-416c-a4f8-d4f2873ffdd3.png)
 
-Therefore, I probably didn't need to use the SSH port if I could directly get a reverse shell here.
-
 ## Step 4 - Exploitation Part 2
 
 Using msfvenom, I generated a netcat reverse shell payload and tried to submit it.
