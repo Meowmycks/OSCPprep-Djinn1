@@ -6,7 +6,7 @@
 
 We must go from visiting a simple website to having root access over the entire web server.
 
-We'll download the VM from [here](https://www.vulnhub.com/entry/djinn-1,397/) and set it up with Oracle VirtualBox.
+We'll download the VM from [here](https://www.vulnhub.com/entry/djinn-1,397/) and set it up with VMWare Workstation Pro 16.
 
 Once the machine is up, we get to work.
 
