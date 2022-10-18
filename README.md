@@ -309,16 +309,12 @@ After much trial and error, I got a working cheat.
 
 ```
 $ python3 djinn1game.py
-/home/meowmycks/djinn1/djinn1game.py:10: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+/home/meowmycks/djinn1/djinn1game.py:31: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
   msg = s.recvuntil('> ')
-/home/meowmycks/djinn1/djinn1game.py:36: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
-  s.sendline(solution)
-/home/meowmycks/djinn1/djinn1game.py:38: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
+1 )  2 + 3  =  5
+/home/meowmycks/djinn1/djinn1game.py:43: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
   msg = s.recvuntil('> ')
-1 )  4 + 4  =  8
-/home/meowmycks/djinn1/djinn1game.py:54: BytesWarning: Text is not bytes; assuming ASCII, no guarantees. See https://docs.pwntools.com/#bytes
-  msg = s.recvuntil('> ')
-2 )  8 * 7  =  56
+2 )  8 - 8  =  0
 3 )  6 * 8  =  48
 4 )  3 - 3  =  0
 5 )  4 / 8  =  0
