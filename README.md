@@ -255,7 +255,7 @@ The script then solves the problem by taking each element and reconstructing the
 The solution is then returned to the window, and the next arithmetic problem is scraped from the window in the same fashion.
 
 ```
-#!/usr/bin/env python3
+!/usr/bin/env python3
 
 from pwn import *
 import sys
@@ -264,50 +264,44 @@ host, port = '192.168.159.168', 1337
 
 s = remote(host, port, level='error')
 
-msg = s.recvuntil('> ')
-
-problem = msg[430:441]
-problem = problem.decode()
-problem = problem.replace('(','')
-problem = problem.replace(')','')
-problem = problem.replace("'","")
-problem = problem.split(', ')
-
-operators = {
+operators = { 
         '+': lambda x,y: x+y,
         '-': lambda x,y: x-y,
         '*': lambda x,y: x*y,
-        '/': lambda x,y: x/y
+        '/': lambda x,y: x/y 
 }
+ 
+def substringExpression(msg):
+        msg = msg[-14:]
+        msg = msg.decode()
+        msg = msg.replace('(','')
+        msg = msg.replace(')','')
+        msg = msg.replace("'","")
+        msg = msg.split(', ')
+        return msg
 
 def evaluateExpression(num1, op, num2):
         num1, num2 = int(num1), int(num2)
         return int(operators[op](num1, num2))
 
-solution = str(evaluateExpression(problem[0], problem[1], problem[2]))
-s.sendline(solution)
- 
-msg = s.recvuntil('> ')
-ctr = 1
-while b'(' in msg and b')' in msg:
-        problem = msg[:-3]
-        problem = problem.decode()
-        problem = problem.replace('(','')
-        problem = problem.replace(')','')
-        problem = problem.replace("'","")
-        problem = problem.split(', ')
 
+msg = s.recvuntil('> ')
+
+ctr = 1
+while b'(' in msg and b')' in msg:   
+        problem = substringExpression(msg[-14:-3])
         solution = str(evaluateExpression(problem[0], problem[1], problem[2]))
         s.sendline(solution.encode())
-        print(ctr,') ',(' '.join(problem)),' = ',solution)
+
+        print(ctr, ') ', (' '.join(problem)), ' = ', solution)
         ctr = ctr + 1
 
         try:
                 msg = s.recvuntil('> ')
         except:
-                print("All solved!")
+                print("All solved!\n")
                 break
-print()
+
 msg = s.recv()
 print(msg)
 ```
