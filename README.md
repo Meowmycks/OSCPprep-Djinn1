@@ -296,11 +296,11 @@ while b'(' in msg and b')' in msg:
         try:
                 msg = s.recvuntil('> ')
         except:
-                print("All solved!\n")
+                print("\nAll solved!\n")
                 break
 
 msg = s.recv()
-print(msg)
+print(msg.decode())
 ```
 
 After much trial and error, I got a working cheat.
