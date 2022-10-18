@@ -272,7 +272,6 @@ operators = {
 }
  
 def substringExpression(msg):
-        msg = msg[-14:]
         msg = msg.decode()
         msg = msg.replace('(','')
         msg = msg.replace(')','')
