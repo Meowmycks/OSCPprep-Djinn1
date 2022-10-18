@@ -29,14 +29,12 @@ def evaluateExpression(num1, op, num2):
 
 msg = s.recvuntil('> ')
 
-ctr = 1
 while b'(' in msg and b')' in msg:   
         problem = substringExpression(msg[-14:-3])
         solution = str(evaluateExpression(problem[0], problem[1], problem[2]))
         s.sendline(solution.encode())
 
         print(ctr, ') ', (' '.join(problem)), ' = ', solution)
-        ctr = ctr + 1
 
         try:
                 msg = s.recvuntil('> ')
