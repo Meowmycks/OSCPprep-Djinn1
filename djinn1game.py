@@ -34,7 +34,7 @@ while b'(' in msg and b')' in msg:
         solution = str(evaluateExpression(problem[0], problem[1], problem[2]))
         s.sendline(solution.encode())
 
-        print(ctr, ') ', (' '.join(problem)), ' = ', solution)
+        print((' '.join(problem)), ' = ', solution)
 
         try:
                 msg = s.recvuntil('> ')
