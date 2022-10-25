@@ -255,7 +255,7 @@ The script then solves the problem by taking each element and reconstructing the
 The solution is then returned to the window, and the next arithmetic problem is scraped from the window in the same fashion.
 
 ```
-!/usr/bin/env python3
+#!/usr/bin/env python3
 
 from pwn import *
 import sys
